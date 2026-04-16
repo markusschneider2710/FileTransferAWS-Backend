@@ -3,6 +3,8 @@
 Backend für das FileTransferAWS Projekt.
 Stellt die AWS-Infrastruktur bereit, die vom Frontend genutzt wird.
 
+Dazugehöriges Frontend: https://github.com/markusschneider2710/FileTransferAWS-Frontend
+
 ## Was macht das Backend?
 
 * Erstellt S3 Bucket für Dateien
