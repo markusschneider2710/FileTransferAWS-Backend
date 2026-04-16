@@ -1,14 +1,73 @@
-# Welcome to your CDK TypeScript project
+# FileTransferAWS Backend
 
-This is a blank project for CDK development with TypeScript.
+Backend für das FileTransferAWS Projekt.
+Stellt die AWS-Infrastruktur bereit, die vom Frontend genutzt wird.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Was macht das Backend?
 
-## Useful commands
+* Erstellt S3 Bucket für Dateien
+* Richtet Authentifizierung über Cognito ein
+* Stellt die Basis für Datei-Uploads und Zugriffe bereit
+* Wird vom Frontend direkt verwendet
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+## Tech Stack
+
+* AWS CDK
+* AWS S3
+* AWS Cognito
+
+## Setup
+
+Repo klonen:
+
+```bash
+git clone https://github.com/markusschneider2710/FileTransferAWS-Backend.git
+cd FileTransferAWS-Backend
+```
+
+Dependencies installieren:
+
+```bash
+npm install
+```
+
+## Deployment
+
+Infrastructure deployen:
+
+```bash
+cdk deploy
+```
+
+Falls CDK noch nicht installiert ist:
+
+```bash
+npm install -g aws-cdk
+```
+
+## Struktur (grob)
+
+```bash
+.
+ ├── bin/        Einstiegspunkt für CDK
+ ├── lib/        Definition der AWS Ressourcen
+ └── package.json
+```
+
+## Verbindung zum Frontend
+
+Das Frontend nutzt die hier erstellten AWS-Ressourcen.
+
+Nach dem Deployment bekommst du z. B.:
+
+* S3 Bucket Name
+* Cognito User Pool
+* Region
+
+Diese Werte musst du im Frontend eintragen:
+
+```bash
+src/aws-config.ts
+```
+
+Ohne diese Verbindung funktioniert das Frontend nicht.
