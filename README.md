@@ -47,15 +47,6 @@ Falls CDK noch nicht installiert ist:
 npm install -g aws-cdk
 ```
 
-## Struktur (grob)
-
-```bash
-.
- ├── bin/        Einstiegspunkt für CDK
- ├── lib/        Definition der AWS Ressourcen
- └── package.json
-```
-
 ## Verbindung zum Frontend
 
 Das Frontend nutzt die hier erstellten AWS-Ressourcen.
